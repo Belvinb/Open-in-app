@@ -3,7 +3,7 @@ const router = express.Router();
 // import { jwtDecode } from "jwt-decode";
 const { jwtDecode } = require("jwt-decode");
 const controllers = require("../Controllers/Controller");
-const cronControllers = require("../Controllers/CronJobController")
+
 
 //decodes user_id from the jwt token
 const decodeTokenMiddleware = async (req, res, next) => {

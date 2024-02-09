@@ -31,7 +31,7 @@ const taskSchema = new Schema(
       enum:["TODO","IN_PROGRESS","DONE"],
       default:"TODO"
     },
-    subtasks: [{ type: Schema.Types.ObjectId ,ref:"SubTask"}],
+    // subtasks: [{ type: Schema.Types.ObjectId ,ref:"SubTask"}],
     deleted_at: {
       type: Date,
     },

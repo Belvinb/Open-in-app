@@ -207,9 +207,9 @@ module.exports = {
         subTaskStatus = 1;
       }
 
-      await SubTask.updateMany(
+      const updated = await SubTask.updateMany(
         { task_id: id },
-        { $set: { status: subTaskStatus } }
+        { $set: { status: subTaskStatus }},{new:true}
       );
 
       res.status(200).json("Task status updated successfully");
