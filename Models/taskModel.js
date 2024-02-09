@@ -14,14 +14,24 @@ const taskSchema = new Schema(
     },
     due_date: {
       type: Date,
-      required: true,
+      required: [true,"Due date is required"],
       default: Date.now(),
     },
     user_id: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },
-    subtasks: [{ type: Schema.Types.ObjectId }],
+    priority:{
+      type:Number,
+      enum:[0,1,2,3]
+
+    },
+    status:{
+      type:String,
+      enum:["TODO","IN_PROGRESS","DONE"],
+      default:"TODO"
+    },
+    subtasks: [{ type: Schema.Types.ObjectId ,ref:"SubTask"}],
     deleted_at: {
       type: Date,
     },
